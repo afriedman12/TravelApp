@@ -6,4 +6,11 @@
         android:icon="@mipmap/ic_menu_black_24dp"
         android:title="action_show_menu"
         app:showAsAction="always" />
+
+    <item android:id="@+id/action_search"
+        android:title="action_search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="collapseActionView|ifRoom"
+        app:actionViewClass="android.widget.SearchView" />
+
 </menu>
