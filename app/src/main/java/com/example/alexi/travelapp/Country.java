@@ -6,11 +6,10 @@ import android.support.annotation.RequiresApi;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-public class country {
+public class Country {
     private String name;
 
     //private List<String> warnings = ArrayList<String>("example");
@@ -20,8 +19,8 @@ public class country {
 
     @TargetApi(Build.VERSION_CODES.O)
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    country(String name) throws IOException{
-        String data = countryManager.readFile(countryManager.getFilePath(), StandardCharsets.UTF_8);
+    Country(String name) throws IOException{
+        String data = CountryManager.readFile(CountryManager.getFilePath(), StandardCharsets.UTF_8);
         this.name = name;
 
         //getWarnings().add("example");
@@ -90,11 +89,11 @@ public class country {
         StringBuilder tempName = new StringBuilder();
         for(int i = index; i < data.length(); i++){
             if(data.charAt(i) == '#'){
-                //scan for country name until end symbol is recognised
+                //scan for Country name until end symbol is recognised
                 int scanNum = 0;
                 while(data.charAt(i + scanNum) != '|'){
                     scanNum += 1;
-                    //add character to country name
+                    //add character to Country name
                     if(data.charAt(i + scanNum) != '|')//if statement possibly not needed due to while loop requirement
                         tempName.append(data.charAt(i + scanNum));
                 }

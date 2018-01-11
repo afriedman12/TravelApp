@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class countryManager {
+public class CountryManager {
     @TargetApi(Build.VERSION_CODES.O)
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static void main(String[] args) throws IOException {
@@ -21,14 +21,14 @@ public class countryManager {
 
         String[] countries = getCountries();
 
-        //test country recognition
+        //test Country recognition
         System.out.print("number of countries: " + countries.length + "\ncountries: \n");
         for(int i = 0; i < countries.length; i++){
             System.out.print(countries[i] + "\n");
         }
 
-        //initialize country class for testing
-        country Tanzania = new country("Tanzania");
+        //initialize Country class for testing
+        Country Tanzania = new Country("Tanzania");
         System.out.print("\n\n" + Tanzania.getWarnings());
 
 
@@ -64,11 +64,11 @@ public class countryManager {
 
         for(int i = 0; i < data.length(); i++){
             if(data.charAt(i) == '#'){
-                //scan for country name until end symbol is recognised
+                //scan for Country name until end symbol is recognised
                 int scanNum = 0;
                 while(data.charAt(i + scanNum) != '|'){
                     scanNum += 1;
-                    //add character to country name
+                    //add character to Country name
                     if(data.charAt(i + scanNum) != '|')
                         countries[countryIndex] = countries[countryIndex] + data.charAt(i + scanNum);
                 }
