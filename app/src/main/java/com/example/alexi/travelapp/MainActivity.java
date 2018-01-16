@@ -1,6 +1,5 @@
 package com.example.alexi.travelapp;
 
-import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -10,11 +9,12 @@ import android.widget.LinearLayout;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.app.SearchManager;
-import android.widget.SearchView;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,10 +28,12 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         try {
-            String[] countries = CountryManager.getCountries();
+            Country c = Country.getCountry("Tanzania", getAssets());
+            displayCountryInfo(c);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
     }
 
@@ -55,6 +57,33 @@ public class MainActivity extends AppCompatActivity {
 
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void displayCountryInfo(Country c){
+        List<String> vaccines = c.getVaccinations();
+        List<String> warnings = c.getWarnings();
+        List<String> alerts = c.getAlerts();
+
+        LinearLayout countryInfo = findViewById(R.id.country_info);
+
+        for(int i = 0; i < vaccines.size(); i++){
+            TextView tv = new TextView(this);
+            tv.setText(vaccines.get(i));
+            tv.setBackgroundColor(getResources().getColor(R.color.red));
+            countryInfo.addView(tv);
+        }
+        for(int i = 0; i < warnings.size(); i++){
+            TextView tv = new TextView(this);
+            tv.setText(warnings.get(i));
+            tv.setBackgroundColor(getResources().getColor(R.color.yellow));
+            countryInfo.addView(tv);
+        }
+        for(int i = 0; i < alerts.size(); i++){
+            TextView tv = new TextView(this);
+            tv.setText(alerts.get(i));
+            tv.setBackgroundColor(getResources().getColor(R.color.green));
+            countryInfo.addView(tv);
         }
     }
 }
