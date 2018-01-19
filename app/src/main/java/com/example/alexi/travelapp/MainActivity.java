@@ -1,13 +1,9 @@
 package com.example.alexi.travelapp;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.LinearLayout;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,11 +11,8 @@ import android.view.MenuItem;
 import android.widget.SearchView;
 import android.widget.TextView;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
-import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar myToolbar = (findViewById(R.id.my_toolbar));
         setSupportActionBar(myToolbar);
+
     }
 
     @Override
@@ -45,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     LinearLayout countryInfo = findViewById(R.id.country_info);
                     countryInfo.removeAllViews();
-                    Country c = Country.getCountry(s, getAssets());
+                    Country c = Country.getCountry(s.toLowerCase(), getAssets());
                     displayCountryInfo(c);
                 } catch(IOException e){
                     e.printStackTrace();
@@ -62,14 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
-            case R.id.action_show_menu:
-                LinearLayout tripList = findViewById(R.id.tripLayout);
-                tripList.setVisibility(tripList.isShown() ? View.GONE:View.VISIBLE);
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void displayCountryInfo(Country c) {
@@ -78,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         if (c == null) {
             TextView tv = new TextView(MainActivity.this);
             tv.setText("This country is not in our database.");
-            tv.setBackgroundColor(getResources().getColor(R.color.gray));
+            tv.setBackgroundColor(getResources().getColor(R.color.MyBlue));
             countryInfo.addView(tv);
         } else {
             List<String> vaccines = c.getVaccinations();
@@ -87,21 +74,23 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < vaccines.size(); i++) {
                 TextView tv = new TextView(this);
                 tv.setText(vaccines.get(i));
-                tv.setBackgroundColor(getResources().getColor(R.color.red));
+                tv.setBackgroundColor(getResources().getColor(R.color.VaccineRed));
                 countryInfo.addView(tv);
             }
             for (int i = 0; i < warnings.size(); i++) {
                 TextView tv = new TextView(this);
                 tv.setText(warnings.get(i));
-                tv.setBackgroundColor(getResources().getColor(R.color.yellow));
+                tv.setBackgroundColor(getResources().getColor(R.color.WarningYellow));
                 countryInfo.addView(tv);
             }
             for (int i = 0; i < alerts.size(); i++) {
                 TextView tv = new TextView(this);
                 tv.setText(alerts.get(i));
-                tv.setBackgroundColor(getResources().getColor(R.color.green));
+                tv.setBackgroundColor(getResources().getColor(R.color.AlertYellow));
                 countryInfo.addView(tv);
             }
         }
+
+
     }
 }

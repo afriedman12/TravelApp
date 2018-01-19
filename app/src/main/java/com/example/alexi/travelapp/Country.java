@@ -36,7 +36,7 @@ public class Country {
             BufferedReader countryReader = new BufferedReader(new InputStreamReader(assets.open("database.txt")));
             Country c = new Country(countryNames[i], countryReader);
             countryReader.close();
-            countryHashMap.put(countryNames[i], c);
+            countryHashMap.put(countryNames[i].toLowerCase(), c);
         }
     }
 

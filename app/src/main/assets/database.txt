@@ -10,7 +10,7 @@
 ~Misc Alert|
 \Tanzania
 #Kenya|
-*Yellow Fever Vaccination//Required if travelling from any region where Yellow Fever is present|
+*Yellow Fever Vaccination: Required if travelling from any region where Yellow Fever is present|
 -EXAMPLE TEXT|
 \Kenya
 #-Tanzania|

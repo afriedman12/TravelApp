@@ -19,25 +19,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/map" />
 
-    <LinearLayout
-        android:id="@+id/tripLayout"
-        android:layout_width="200dp"
-        android:layout_height="match_parent"
-        android:layout_marginTop="24dp"
-        android:background="#f4f4f4"
-        android:orientation="vertical"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ExpandableListView
-            android:id="@+id/tripList"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
-
-    </LinearLayout>
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
@@ -48,21 +29,27 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:layout_marginStart="452dp"
+        android:layout_marginLeft="452dp"
+        android:paddingTop="?attr/actionBarSize"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-        android:id="@+id/country_info"
-        android:layout_width="85dp"
-        android:layout_height="139dp"
-        android:layout_marginEnd="504dp"
-        android:layout_marginRight="504dp"
-        android:paddingTop="220dp"
-        android:background="@color/silver"
-        android:orientation="vertical"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/country_info"
+            android:layout_width="141dp"
+            android:layout_height="312dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:background="@color/silver"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
     </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
