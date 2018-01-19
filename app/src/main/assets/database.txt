@@ -23,11 +23,11 @@
 *Japanese Encephalitis Vaccination: Vaccination may be required when travelling to rural areas.|
 -Practice usual health precautions.|
 ~Rural regions may potentially contain areas where rabies is common; refer to a regional disease map for more details.|
-/Australia|
+\Australia|
 
 #Indonesia|
 *Hepatitis A Vaccination: Hepatitis A is common in contaminated food and water.|
 *Typhoid Vaccination: Typhoid may also be present in food and water.|
 -Avoid rural areas where Typhoid is more likely to be present.|
 ~Civil unrest is common.|
-/Indonesia|
+\Indonesia|

@@ -71,21 +71,42 @@ public class MainActivity extends AppCompatActivity {
             List<String> vaccines = c.getVaccinations();
             List<String> warnings = c.getWarnings();
             List<String> alerts = c.getAlerts();
+
+            if(vaccines.size() > 0){
+                TextView tv = new TextView(this);
+                tv.setText("VACCINATIONS");
+                tv.setBackgroundColor(getResources().getColor(R.color.VaccineRed));
+                countryInfo.addView(tv);
+            }
             for (int i = 0; i < vaccines.size(); i++) {
                 TextView tv = new TextView(this);
-                tv.setText(vaccines.get(i));
+                tv.setText((i+1) + ". " + vaccines.get(i));
                 tv.setBackgroundColor(getResources().getColor(R.color.VaccineRed));
+                countryInfo.addView(tv);
+            }
+
+            if(warnings.size() > 0){
+                TextView tv = new TextView(this);
+                tv.setText("TRAVEL WARNINGS");
+                tv.setBackgroundColor(getResources().getColor(R.color.WarningYellow));
                 countryInfo.addView(tv);
             }
             for (int i = 0; i < warnings.size(); i++) {
                 TextView tv = new TextView(this);
-                tv.setText(warnings.get(i));
+                tv.setText((i+1) + ". " + warnings.get(i));
                 tv.setBackgroundColor(getResources().getColor(R.color.WarningYellow));
+                countryInfo.addView(tv);
+            }
+
+            if(alerts.size() > 0){
+                TextView tv = new TextView(this);
+                tv.setText("TRAVEL ALERTS");
+                tv.setBackgroundColor(getResources().getColor(R.color.AlertYellow));
                 countryInfo.addView(tv);
             }
             for (int i = 0; i < alerts.size(); i++) {
                 TextView tv = new TextView(this);
-                tv.setText(alerts.get(i));
+                tv.setText((i+1) + ". " + alerts.get(i));
                 tv.setBackgroundColor(getResources().getColor(R.color.AlertYellow));
                 countryInfo.addView(tv);
             }
