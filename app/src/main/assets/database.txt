@@ -1,16 +1,33 @@
 #Ethiopia|
 -EXAMPLE WARNING|
 -EXAMPLE WARNING 2|
-\Ethiopia
+\Ethiopia|
+
 #Tanzania|
-*Yellow Fever Vaccination: Required if travelling from any region where Yellow Fever is present|
-*Malaria Vaccination: Required if not administered within the past 5 years|
--Drink water only from bottled sources|
--Avoid any consuming uncooked produce|
+*Yellow Fever Vaccination: Required if travelling from any region where Yellow Fever is present.|
+*Malaria Vaccination: Required if not administered within the past 5 years.|
+-Drink water only from bottled sources.|
+-Avoid any consuming uncooked produce.|
 ~Misc Alert|
-\Tanzania
+\Tanzania|
+
 #Kenya|
 *Yellow Fever Vaccination: Required if travelling from any region where Yellow Fever is present|
 -EXAMPLE TEXT|
 \Kenya
 #-Tanzania|
+
+#Australia|
+*Hepatitis A Vaccination: Avoid potentially contaminated foods.|
+*Hepatitis B Vaccination: Avoid transmission of body fluids.|
+*Japanese Encephalitis Vaccination: Vaccination may be required when travelling to rural areas.|
+-Practice usual health precautions.|
+~Rural regions may potentially contain areas where rabies is common; refer to a regional disease map for more details.|
+/Australia|
+
+#Indonesia|
+*Hepatitis A Vaccination: Hepatitis A is common in contaminated food and water.|
+*Typhoid Vaccination: Typhoid may also be present in food and water.|
+-Avoid rural areas where Typhoid is more likely to be present.|
+~Civil unrest is common.|
+/Indonesia|
