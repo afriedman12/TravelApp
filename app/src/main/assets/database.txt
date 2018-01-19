@@ -3,8 +3,8 @@
 -EXAMPLE WARNING 2|
 \Ethiopia
 #Tanzania|
-*Yellow Fever Vaccination//Required if travelling from any region where Yellow Fever is present|
-*Malaria Vaccination//Required if not administered within the past 5 years|
+*Yellow Fever Vaccination: Required if travelling from any region where Yellow Fever is present|
+*Malaria Vaccination: Required if not administered within the past 5 years|
 -Drink water only from bottled sources|
 -Avoid any consuming uncooked produce|
 ~Misc Alert|

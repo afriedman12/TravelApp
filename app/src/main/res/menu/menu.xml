@@ -7,7 +7,7 @@
         android:title="@string/menu_title"
         app:showAsAction="always" />
 
-    <item android:id="@+id/action_search"
+    <item android:id="@+id/search"
         android:title="@string/search_title"
         android:icon="@android:drawable/ic_menu_search"
         app:showAsAction="collapseActionView|ifRoom"
